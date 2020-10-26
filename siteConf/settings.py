@@ -113,3 +113,32 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+
+#for gmail
+
+# go to google and less secure app then activate for your self
+#then you can send receive email from people through third party app 
+'''
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sh.danishyar@gmail.com'
+EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+'''
+
+
+'''
+for testing porpoise  we can use local host to receive email
+we need to turn on our fake email server so do the folowing line:
+python -m smtpd -n -c DebuggingServer.localhost:1025
+
+EMAIL_HOST = 'localhost' 
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+'''
+
+# or you can use django consol email backend as well.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
